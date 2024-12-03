@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Learning Reflections</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <select id="slideSelect" onchange="navigateToSlide()">
+            <option value="slides.html">Introduction to the Course</option>
+            <option value="project.html">Course Project Introduction</option>
+            <option value="reflections.html" selected>Course Learning Reflections</option>
+        </select>
+    </header>
+    <div class="slide">
+        <h1>Course Learning Reflections</h1>
+        
+        <section>
+            <h2>1. Problems Observed in Nature and Computational Approaches</h2>
+            <ul>
+                <li><strong>Iterative Problems:</strong> Repeated processes, such as traversing a list or performing simple calculations (e.g., matrix multiplication).</li>
+                <li><strong>Recursive Problems:</strong> Self-similar problems like the Towers of Hanoi, Fibonacci sequence, or tree traversal.</li>
+                <li><strong>Backtracking Problems:</strong> Constraint-satisfaction challenges, such as solving a Sudoku or the N-Queens problem.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Nature exhibits iterative phenomena (e.g., daily cycles), recursive patterns (e.g., fractals), and complex decisions (e.g., ant colony optimization), mimicked in computational problems.</p>
+        </section>
+
+        <section>
+            <h2>2. Space and Time Efficiency</h2>
+            <ul>
+                <li><strong>Definitions and Importance:</strong> Space (memory usage) and time (execution duration) efficiency are critical in scalable systems.</li>
+                <li><strong>Orders of Growth:</strong> Discuss constant, logarithmic, linear, polynomial, and exponential complexities with examples.</li>
+                <li><strong>Class of Problems:</strong> P, NP, and NP-Complete problems and their real-world relevance.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Balancing time and space efficiency is pivotal when optimizing algorithms, such as when deciding between recursion and iteration.</p>
+        </section>
+
+        <section>
+            <h2>3. Hashing and Design Principles</h2>
+            <ul>
+                <li><strong>Direct Address Tables:</strong> Simplest form of key-value storage.</li>
+                <li><strong>Hash Functions:</strong> The importance of good hash functions in ensuring uniform distribution.</li>
+                <li><strong>Collision Resolution:</strong> Techniques like chaining and open addressing.</li>
+            </ul>
+            <p><strong>Reflection:</strong> The efficiency of hashing directly impacts applications like databases and caches, where fast lookups are critical.</p>
+        </section>
+
+        <section>
+            <h2>4. Hierarchical Data and Tree Data Structures</h2>
+            <ul>
+                <li><strong>Binary Trees and BST:</strong> Simple hierarchical data organization for efficient searching.</li>
+                <li><strong>AVL and 2-3 Trees:</strong> Balancing trees to maintain efficiency in operations.</li>
+                <li><strong>Tries and Heaps:</strong> Specialized trees for string storage and priority-based operations.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Tree data structures allow hierarchical organization, balancing, and fast access, essential in applications like file systems and search engines.</p>
+        </section>
+
+        <section>
+            <h2>5. Array Query Algorithms</h2>
+            <ul>
+                <li><strong>Types of Queries:</strong> Range queries, point queries, and their significance.</li>
+                <li><strong>Applications:</strong> Searching, indexing, and real-time analytics.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Efficient query algorithms enable rapid information retrieval, essential in big data and database applications.</p>
+        </section>
+
+        <section>
+            <h2>6. Trees vs. Graphs</h2>
+            <ul>
+                <li><strong>Structural Differences:</strong> Trees are hierarchical, graphs are network-based.</li>
+                <li><strong>Traversal Techniques:</strong> DFS and BFS compared between trees and graphs.</li>
+                <li><strong>Applications:</strong> Trees: Parsing expressions, representing hierarchies. Graphs: Social networks, transportation systems.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Understanding both structures aids in modeling diverse problems, from organizational charts to complex network systems.</p>
+        </section>
+
+        <section>
+            <h2>7. Sorting and Searching Algorithms</h2>
+            <ul>
+                <li><strong>Sorting Techniques:</strong> Comparing merge sort, quick sort, and heap sort.</li>
+                <li><strong>Search Algorithms:</strong> Linear vs. binary search and their use cases.</li>
+                <li><strong>Real-World Connections:</strong> Applications in e-commerce, databases, and file systems.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Sorting and searching optimize data handling, improving the efficiency of systems handling large datasets.</p>
+        </section>
+
+        <section>
+            <h2>8. Graph Algorithms: Spanning Trees and Shortest Paths</h2>
+            <ul>
+                <li><strong>Spanning Trees:</strong> Applications in network design, such as minimal wiring.</li>
+                <li><strong>Shortest Paths:</strong> Relevance in GPS navigation and network routing.</li>
+            </ul>
+            <p><strong>Reflection:</strong> Graph algorithms help solve real-world problems like infrastructure design and data flow optimization.</p>
+        </section>
+
+        <section>
+            <h2>9. Algorithm Design Techniques</h2>
+            <ul>
+                <li><strong>Divide and Conquer:</strong> Efficient problem-solving through decomposition (e.g., merge sort).</li>
+                <li><strong>Dynamic Programming:</strong> Optimizing overlapping subproblems (e.g., Knapsack problem).</li>
+                <li><strong>Greedy Algorithms:</strong> Immediate optimal decisions (e.g., Kruskal's algorithm).</li>
+            </ul>
+            <p><strong>Reflection:</strong> Each design technique offers a unique approach to problem-solving, applicable in diverse domains from optimization to game theory.</p>
+        </section>
+    </div>
+    <script>
+        function navigateToSlide() {
+            const selectedSlide = document.getElementById("slideSelect").value;
+            window.location.href = selectedSlide;
+        }
+    </script>
+</body>
+</html>
