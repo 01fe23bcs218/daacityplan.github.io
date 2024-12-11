@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Cases and Algorithms</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #16a085;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        ul ul {
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        li strong {
+            color: #2c3e50;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Business Cases and Algorithms</h1>
+    </header>
+
+    <main>
+        <div class="section">
+            <h2>1. Transportation: Dijkstra's Algorithm</h2>
+            <p>This algorithm is suitable for finding the shortest path for providing transportation services.</p>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>Greedy Approach:</strong> It uses a greedy approach to select the shortest path in a weighted graph.</li>
+                <li><strong>Shortest Path:</strong> It calculates the shortest path from a source node to all other nodes in a graph.</li>
+            </ul>
+            <p><strong>C++ Code:</strong></p>
+            <pre>
+void dijkstra(int nodes, vector<pair<int, int>> adj[], int start) {
+    vector<int> dist(nodes, INT_MAX);
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+
+    dist[start] = 0;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        int current_dist = pq.top().first;
+        int current_node = pq.top().second;
+        pq.pop();
+
+        for (auto neighbor : adj[current_node]) {
+            int next_node = neighbor.first;
+            int weight = neighbor.second;
+
+            if (current_dist + weight < dist[next_node]) {
+                dist[next_node] = current_dist + weight;
+                pq.push({dist[next_node], next_node});
+            }
+        }
+    }
+
+    cout << "Shortest distances from source " << start << ":\n";
+    for (int i = 0; i < nodes; ++i) {
+        cout << "To node " << i << " : " << dist[i] << endl;
+    }
+}
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>2. Agriculture: Kruskal's Algorithm</h2>
+            <p>This algorithm can be used to design a network between farmers and warehouses.</p>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>Minimum Spanning Tree:</strong> It helps create a minimum spanning tree to connect nodes with the least total weight.</li>
+                <li><strong>Union-Find:</strong> It uses the Union-Find structure to detect cycles and merge trees.</li>
+            </ul>
+            <p><strong>C++ Code:</strong></p>
+            <pre>
+#include <bits/stdc++.h>
+using namespace std;
+
+class DisjointSet {
+private:
+    vector<int> A;
+
+public:
+    DisjointSet(size_t n) {
+        A = vector<int>(n);
+        for (int i = 0; i < n; i++)
+            A[i] = i;
+    }
+
+    bool FIND(int u, int v) {
+        return A[u] == A[v];
+    }
+
+    void UNION(int u, int v) {
+        int temp = A[u];
+        for (int i = 0; i < A.size(); i++) {
+            if (A[i] == temp)
+                A[i] = A[v];
+        }
+    }
+};
+
+class AdjMatrix {
+private:
+    vector<vector<int>> matrix;
+    vector<tuple<int, int, int>> edge_list;
+    size_t vertices;
+
+public:
+    AdjMatrix(size_t vertices): vertices(vertices) {
+        matrix = vector<vector<int>>(vertices, vector<int>(0, vertices));
+    }
+
+    void add_edge(int src, int dest, int weight = 0) {
+        if (src < matrix.size() and dest < matrix.size()) {
+            matrix[src][dest] = weight;
+            matrix[dest][src] = weight;
+            edge_list.push_back(make_tuple(weight, src, dest));
+        }
+    }
+
+    void sort_edges() {
+        sort(edge_list.begin(), edge_list.end(), [](tuple<int, int, int>& a, tuple<int, int, int>& b) { return get<0>(a) < get<0>(b); });
+    }
+
+    int kruskal_algorithm() {
+        sort_edges();
+        DisjointSet DS(vertices);
+        int cost = 0;
+        for (tuple<int, int, int>& x: edge_list) {
+            int src = get<1>(x), dest = get<2>(x);
+            if (DS.FIND(src, dest)) {
+                DS.UNION(src, dest);
+                cost += matrix[src][dest];
+            }
+        }
+        return cost;
+    }
+};
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>3. Education: Quick Sort</h2>
+            <p>This algorithm can be used to sort the student data in the desired manner.</p>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>Pivot Selection:</strong> It selects a pivot element and rearranges the array around it.</li>
+                <li><strong>Divide and Conquer:</strong> The array is divided into smaller subarrays, which are sorted recursively.</li>
+            </ul>
+            <p><strong>C++ Code:</strong></p>
+            <pre>
+#include<bits/stdc++.h>
+using namespace std;
+
+int partition(int A[], int low, int high) {
+    int i = low, j = high, pivot = A[low];
+    while (i < j) {
+        while (A[i] <= pivot)
+            i++;
+        while (A[j] > pivot)
+            j--;
+        if (i < j)
+            swap(A[i], A[j]);
+    }
+    A[low] = A[j];
+    A[j] = pivot;
+    return j;
+}
+
+void quickSort(int A[], int low, int high) {
+    if (low >= high)
+        return;
+    int s = partition(A, low, high);
+    quickSort(A, low, s - 1);
+    quickSort(A, s + 1, high);
+}
+            </pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Business Algorithms. All rights reserved.</p>
+    </footer>
+</body>
+</html>
