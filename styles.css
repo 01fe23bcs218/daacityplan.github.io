@@ -1,9 +1,9 @@
 /* Body */
 body {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
-    background-color: #222; /* Set background color for the whole body */
+    background-color: #222;
 }
 
 /* Header (Navigation Bar) */
@@ -11,24 +11,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
+    padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: transparent; /* No background */
-    border: none; /* Ensures there's no border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow added for separation */
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Logo */
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem; /* Adjusted size */
     font-weight: bold;
-    color: #FFD700; /* Gold color */
+    color: #FFD700;
     text-align: left;
     margin-right: auto;
     padding-left: 20px;
@@ -37,9 +37,9 @@ header {
 /* Navigation */
 header nav {
     display: flex;
-    gap: 20px;
+    gap: 17px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     max-width: 800px;
 }
@@ -50,11 +50,10 @@ header nav a {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     transition: color 0.3s ease;
-    white-space: nowrap;
 }
 
 header nav a:hover {
-    color: #ff6347; /* Red-orange color on hover */
+    color: #ff6347;
 }
 
 /* Home Section (Initial Page) */
@@ -73,32 +72,15 @@ header nav a:hover {
 
 /* Home Section Content */
 .home h1 {
-    font-size: 4rem;
-    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; /* Reduced size */
+    font-family: 'Cinzel Decorative', cursive;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     margin: 0 0 20px;
 }
 
 .home p {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Reduced size */
     margin: 10px 0;
-}
-
-.home .btn {
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #ff6347;
-    color: white;
-    font-size: 1.2rem;
-    font-family: 'Roboto', sans-serif;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.home .btn:hover {
-    background-color: #cc2900;
 }
 
 /* Content Section */
@@ -109,14 +91,44 @@ header nav a:hover {
 }
 
 h2 {
-    font-size: 2.5rem;
-    color: #fff;
+    font-size: 2rem; /* Adjusted size */
+    color: #FFD700;
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem; /* Adjusted size */
+    color: #FFD700;
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.6rem; /* Adjusted size */
+    color: #FFD700;
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 15px;
 }
 
 .section p {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Adjusted size */
     color: white;
     margin: 10px 0;
+}
+
+/* Business Cases - List Styling */
+.business-case ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.business-case li {
+    font-size: 1.1rem; /* Adjusted size */
+    color: #fff;
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 /* Alternating Section Colors */
@@ -130,16 +142,16 @@ h2 {
 
 /* Navbar Active */
 header.active {
-    background-color: #333; /* Dark background color when scrolling */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header {
         flex-direction: column;
         gap: 10px;
-        padding: 10px 20px;
+        padding: 15px 20px;
     }
 
     .home h1 {
@@ -150,28 +162,124 @@ header.active {
         font-size: 1.2rem;
     }
 
-    .btn {
+    .home .btn {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+
+    header nav {
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    header nav a {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .section p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile Screen (Up to 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    header {
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .home {
+        padding-top: 120px;
+        background-position: center;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .home p {
         font-size: 1rem;
+    }
+
+    .home .btn {
+        font-size: 0.9rem;
         padding: 10px 20px;
     }
 
     header nav {
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     header nav a {
         font-size: 1rem;
     }
-}
-/* Business Cases Section (Spacing Between Members) */
-#business-cases .member {
-    margin-bottom: 40px; /* Add space between each member */
+
+    .section {
+        padding: 40px 15px;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
 }
 
-/* Add 2-line gap between members in business cases section */
-#business-cases .member {
-    margin-bottom: 40px; /* Adjusted for two-line gap */
+/* Extra Small Screen (Up to 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .home {
+        padding-top: 100px;
+    }
+
+    .home h1 {
+        font-size: 1.8rem;
+    }
+
+    .home p {
+        font-size: 0.9rem;
+    }
+
+    .home .btn {
+        font-size: 0.8rem;
+        padding: 8px 18px;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Smooth Scroll */
