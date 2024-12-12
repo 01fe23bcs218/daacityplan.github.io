@@ -31,14 +31,12 @@ header {
     color: #FFD700;
     text-align: left;
     margin-right: auto;
-    padding-left: 20px;
 }
 
 /* Navigation */
 header nav {
     display: flex;
     gap: 17px;
-    flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
     max-width: 800px;
