@@ -1,0 +1,107 @@
+/* Body */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    background-color: #222; /* Set background color for the whole body */
+}
+
+/* Header (Navigation Bar) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; /* No background */
+    border: none; /* Ensures there's no border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow added for separation */
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    text-align: left;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #FFD700;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: #ff6347; /* Red-orange color on hover */
+}
+
+header nav a.active {
+    color: #ff6347; /* Active link color */
+}
+
+/* Main Section */
+main {
+    padding-top: 80px;
+}
+
+/* Section Styling */
+.section {
+    padding: 40px;
+    text-align: left;
+    margin: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Questions Section */
+.questions h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.questions p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
