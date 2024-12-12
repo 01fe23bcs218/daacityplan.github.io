@@ -1,0 +1,171 @@
+/* Body */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    background-color: #222; /* Set background color for the whole body */
+}
+
+/* Header (Navigation Bar) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; /* No background */
+    border: none; /* Ensures there's no border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow added for separation */
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    text-align: left;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #FFD700;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: #ff6347; /* Red-orange color on hover */
+}
+
+/* Home Section (Initial Page) */
+.home {
+    padding-top: 150px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1239162/pexels-photo-1239162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+    text-align: center;
+    color: #FFD700;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Home Section Content */
+.home h1 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 0 20px;
+}
+
+.home p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.home .btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home .btn:hover {
+    background-color: #cc2900;
+}
+
+/* Content Section */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.section p {
+    font-size: 1.5rem;
+    color: white;
+    margin: 10px 0;
+}
+
+/* Alternating Section Colors */
+.section:nth-child(odd) {
+    background-color: #333;
+}
+
+.section:nth-child(even) {
+    background-color: #444;
+}
+
+/* Navbar Active */
+header.active {
+    background-color: #333; /* Dark background color when scrolling */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .home h1 {
+        font-size: 2.5rem;
+    }
+
+    .home p {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    header nav {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header nav a {
+        font-size: 1rem;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
