@@ -19,7 +19,7 @@ header {
     background-color: transparent;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
