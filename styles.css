@@ -19,7 +19,7 @@ header {
     background-color: transparent;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -31,12 +31,14 @@ header {
     color: #FFD700;
     text-align: left;
     margin-right: auto;
+    padding-left: 20px;
 }
 
 /* Navigation */
 header nav {
     display: flex;
     gap: 17px;
+    flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
     max-width: 800px;
