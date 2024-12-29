@@ -1,0 +1,136 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #2ecc71;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #27ae60;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 0.5rem;
+}
+
+section p {
+    margin: 0.5rem 0;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    list-style: square;
+    color: #34495e;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Links Styling (General) */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
+
+/* Enhanced Focus State for Accessibility */
+a:focus, button:focus {
+    outline: 3px dashed #1abc9c;
+    outline-offset: 3px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
