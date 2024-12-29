@@ -21,7 +21,9 @@ void Dijkstra(const vector<vector<pair<int, int>>>& G, int s) {
         int u = Q.top().second;
         Q.pop();
 
-        for (auto [v, w] : G[u]) {
+        for (const auto& edge : G[u]) {
+            int v = edge.first;
+            int w = edge.second;
             if (d[u] + w < d[v]) {
                 d[v] = d[u] + w;
                 p[v] = u;
@@ -32,7 +34,11 @@ void Dijkstra(const vector<vector<pair<int, int>>>& G, int s) {
 
     cout << "Vertex Distance from Source" << endl;
     for (int i = 0; i < n; ++i) {
-        cout << i << "\t" << d[i] << endl;
+        if (d[i] == INF) {
+            cout << i << "\tINF" << endl;
+        } else {
+            cout << i << "\t" << d[i] << endl;
+        }
     }
 }
 
@@ -71,6 +77,10 @@ void Kruskal(vector<Edge>& edges, int V) {
             MST.push_back(e);
             Union(e.u, e.v, parent, rank);
         }
+    }
+
+    if (MST.size() != V - 1) {
+        cerr << "Graph is disconnected; full MST is not possible." << endl;
     }
 
     cout << "Edges in MST:" << endl;
@@ -130,13 +140,18 @@ int BinarySearch(const vector<int>& arr, int target) {
         int mid = low + (high - low) / 2;
         if (arr[mid] == target) return mid;
         if (arr[mid] < target) low = mid + 1;
-        else high = mid - 1;
+        else high - 1;
     }
     return -1;
 }
 
 int main() {
     ifstream infile("uber_routes_input.txt");
+    if (!infile) {
+        cerr << "Error: Unable to open input file." << endl;
+        return 1;
+    }
+
     int n;
     infile >> n;
 
