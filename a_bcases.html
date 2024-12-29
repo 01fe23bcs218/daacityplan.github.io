@@ -58,18 +58,91 @@
         <!-- SDG Mapping for Business Cases Section -->
         <h1>SDG Mapping for Business Cases</h1>
 
-        <!-- Business Case 1: TNC / Uber -->
-        <div class="section">
-            <h2>1. Transportation Network Company (TNC) / Uber</h2>
-            <p><strong>Target 11.2:</strong> By 2030, provide access to safe, affordable, accessible, and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities, and older persons.</p>
-            <p><strong>Indicator 11.2.1:</strong> Proportion of population that has convenient access to public transport, by sex, age, and persons with disabilities.</p>
-            <h3>IN TNC: TO FIND SHORTEST PATH</h3>
-            <p>When a passenger requests a ride, the system can use Dijkstra’s Algorithm to compute the shortest path from the passenger’s location to the nearest available driver and also to find the shortest path to the passenger's destination. This helps optimize the time taken to reach the passenger, ensuring a quicker and more efficient ride-matching process.</p>
-            <p><strong>C++ implementation of Dijkstra's algorithm:</strong></p>
-        
-            <!-- Button to navigate to code page -->
-            <a href="code.txt" class="button">Code</a>
-        </div>
+               <!-- Business Case 1: TNC / Uber -->
+               <div class="section">
+                <h2>1. Transportation Network Company (TNC) / Uber</h2>
+                <p><strong>Target 11.2:</strong> By 2030, provide access to safe, affordable, accessible, and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities, and older persons.</p>
+                <p><strong>Indicator 11.2.1:</strong> Proportion of population that has convenient access to public transport, by sex, age, and persons with disabilities.</p>
+    
+                <h3>Example Scenario: Indore TNC Optimization</h3>
+                <p>
+                    A Transportation Network Company (TNC) in Indore aims to optimize routes for drivers using real-time traffic and ride demand data. The system calculates the shortest travel time between various zones in the city to ensure efficient and timely rides.
+                </p>
+                <h4>Office Hubs and Pickup Points Across Indore:</h4>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #fff;">
+                    <thead>
+                        <tr style="background-color: #f4f4f4;">
+                            <th style="border: 1px solid #ddd; padding: 8px;">Sl. No.</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">Zone Name</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">Number of Pickup Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Vijay Nagar</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">12</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">2</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Rajwada</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">8</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Bhanwarkuan</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">10</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Palasia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">6</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Dewas Naka</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">9</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Impact of Zone-Wise Optimization</h3>
+                <p>
+                    By analyzing the distribution of pickup points and leveraging real-time traffic data, the TNC can optimize the route and allocation process to improve efficiency and reduce travel times. This approach ensures timely rides for passengers and better resource management for drivers.
+                </p>
+    
+                <h3>Algorithms Used</h3>
+                <ul>
+                    <li>
+                        <strong>Dijkstra's Algorithm:</strong>
+                        <ul>
+                            <li>Used for finding the shortest path between a source and all other nodes in the graph.</li>
+                            <li>Implements a priority queue to calculate the shortest travel time considering the traffic conditions stored in <em>uber_routes_input.txt</em>.</li>
+                            <li>Outputs the shortest distance to all zones in the city from a source node.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Kruskal's Algorithm:</strong>
+                        <ul>
+                            <li>Applied for generating a Minimum Spanning Tree (MST) to optimize the network connectivity between zones and reduce overall travel costs.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Merge Sort and Binary Search:</strong>
+                        <ul>
+                            <li><strong>Merge Sort:</strong> Optimizes the ordering of customer requests for efficient processing.</li>
+                            <li><strong>Binary Search:</strong> Locates specific drivers or zones efficiently in sorted arrays of requests.</li>
+                        </ul>
+                    </li>
+                </ul>
+    
+    
+                <p><strong>C++ implementation of Dijkstra's algorithm:</strong></p>
+            
+                <!-- Button to navigate to code page -->
+                <a href="code.txt" class="button">Code</a>
+            </div>
+    
 
        
         <!-- Business Case 3: Internet Service Provider (ISP) -->
@@ -82,6 +155,81 @@
             <p><strong>Target 11.6:</strong> By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management.</p>
             <p><strong>Indicator 11.6.1:</strong> Proportion of urban solid waste regularly collected and with adequate final discharge out of total urban solid waste generated, by cities.</p>
 
+            <h3>Scenario: ISP Expansion in Indore</h3>
+            <p>
+                An Internet Service Provider (ISP) is expanding its high-speed fiber network across Indore. To meet increasing data demand, the ISP must optimize its fiber installation network to minimize costs while ensuring reliable connectivity across key zones. The use of Minimum Spanning Tree (MST) algorithms helps in achieving this objective efficiently.
+            </p>
+
+            <h4>Zones and Data Demand:</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #fff;">
+                <thead>
+                    <tr style="background-color: #f4f4f4;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">Sl. No.</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Zone Name</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Data Demand (MBps)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Old Palasia</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">300</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Bhawarkua</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">450</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">3</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Annapurna</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">350</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">4</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Rau</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">250</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">5</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Kanadia Road</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">200</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Algorithms Used</h3>
+            <ul>
+                <li>
+                    <strong>Prim's Algorithm:</strong>
+                    <ul>
+                        <li>Computes the Minimum Spanning Tree (MST) to optimize cable distribution.</li>
+                        <li>Outputs the edges and weights that form the minimum network cost.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Floyd-Warshall Algorithm:</strong>
+                    <ul>
+                        <li>Computes the shortest paths between all pairs of nodes to assess network latency and optimize redundancy in connectivity.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bellman-Ford Algorithm:</strong>
+                    <ul>
+                        <li>Detects negative weight cycles in the graph to ensure network reliability.</li>
+                        <li>Validates that all shortest paths computed are feasible in the system.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Selection Sort and Linear Search:</strong>
+                    <ul>
+                        <li><strong>Selection Sort:</strong> Organizes customer bandwidth requests for efficient handling.</li>
+                        <li><strong>Linear Search:</strong> Locates specific requests in an unsorted list.</li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
             <a href="code2.txt" class="button">Code</a>
         </div>
 
@@ -92,13 +240,47 @@
             <p><strong>Indicator 11.6.1:</strong> Proportion of urban solid waste regularly collected and with adequate final discharge out of total urban solid waste generated, by cities.</p>
             <p><strong>Indicator 11.6.2:</strong> Annual mean levels of fine particulate matter (e.g., PM2.5 and PM10) in cities (population weighted).</p>
 
+            <h3>Scenario: E-commerce Warehouse Optimization in Indore</h3>
+            <p>
+                An e-commerce company operates warehouses in Indore and aims to minimize transportation costs and delivery times. The goods are transported from the warehouses to various zones in the city. This transportation problem is represented using a cost matrix, and the goal is to optimize the flow of goods by selecting the most efficient routes.
+            </p>
+
+            <h4>Warehouses and Capacities:</h4>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #fff;">
+                <thead>
+                    <tr style="background-color: #f4f4f4;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">Sl. No.</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Warehouse Name</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Capacity (in MB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Lasudia Mori</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2000</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Rajendra Nagar</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">1500</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">3</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Sanwer Road</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
             <a href="code3.txt" class="button">Code</a>
         </div>
 
     </div>
 
     <div class="section">
-        <p><a href="Copy of dsa-project-design-checklist(341).xlsx" class="button">course-project-eval-sheet(341)</a></p>
+        <p><a href="course-project-eval-sheet(341).docx" class="button">course-project-eval-sheet(341)</a></p>
         <p><a href="Copy of dsa-project-design-checklist(341).xlsx" class="button">dsa-project-design-checklist(check downloads)</a></p>
         <p><a href="code.txt" class="button">Code</a></p>
     </div>
