@@ -2,6 +2,7 @@
 #include <vector>
 #include <limits>
 #include <algorithm>
+#include <queue>
 #include <fstream>
 using namespace std;
 
@@ -24,7 +25,9 @@ void Prim(const vector<vector<pair<int, int>>>& G, int start) {
         if (inMST[u]) continue;
         inMST[u] = true;
 
-        for (auto [v, w] : G[u]) {
+        for (const auto& edge : G[u]) {
+            int v = edge.first;
+            int w = edge.second;
             if (!inMST[v] && w < key[v]) {
                 key[v] = w;
                 parent[v] = u;
@@ -70,7 +73,9 @@ bool BellmanFord(const vector<vector<pair<int, int>>>& G, int s, vector<int>& d)
 
     for (int i = 0; i < n - 1; ++i) {
         for (int u = 0; u < n; ++u) {
-            for (auto [v, w] : G[u]) {
+            for (const auto& edge : G[u]) {
+                int v = edge.first;
+                int w = edge.second;
                 if (d[u] != INF && d[u] + w < d[v]) {
                     d[v] = d[u] + w;
                 }
@@ -79,7 +84,9 @@ bool BellmanFord(const vector<vector<pair<int, int>>>& G, int s, vector<int>& d)
     }
 
     for (int u = 0; u < n; ++u) {
-        for (auto [v, w] : G[u]) {
+        for (const auto& edge : G[u]) {
+            int v = edge.first;
+            int w = edge.second;
             if (d[u] != INF && d[u] + w < d[v]) {
                 return false;
             }
@@ -147,4 +154,3 @@ int main() {
     cout << "ISP network optimization complete." << endl;
     return 0;
 }
-
