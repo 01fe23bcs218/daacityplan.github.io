@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Development and Algorithm Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .table-container {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Urban Development and Algorithm Applications</h1>
+
+    <div class="section">
+        <h2>Business Case 1: Smart Waste Management System</h2>
+        <p><strong>SDG 11 Alignment</strong></p>
+        <p><strong>Target 11.6:</strong> Reduce the adverse environmental impact of cities, including air quality and waste management.</p>
+        <p><strong>Indicator 11.6.1:</strong> Proportion of municipal solid waste collected and managed in controlled facilities.</p>
+        <h3>Proposed Algorithms</h3>
+        <ul>
+            <li><strong>Shortest Path for Waste Collection Optimization (Dijkstra’s Algorithm):</strong> Optimize routes for waste collection trucks to minimize fuel consumption and time.</li>
+            <li><strong>Union-Find Algorithm for Bin Management:</strong> Group bins by locality to optimize collection schedules.</li>
+            <li><strong>Hashing for Waste Type Segregation:</strong> Efficiently tag and sort waste into categories (organic, recyclable, etc.).</li>
+        </ul>
+        <h3>Business Case 1 Code</h3>
+        <pre>
+            // Dijkstra's Algorithm for Waste Collection Optimization
+            function dijkstra(graph, start) {
+                let distances = {};
+                let visited = {};
+                let pq = new PriorityQueue();
+                pq.enqueue(start, 0);
+                distances[start] = 0;
+                while (!pq.isEmpty()) {
+                    let node = pq.dequeue();
+                    visited[node] = true;
+                    let neighbors = graph[node];
+                    for (let neighbor in neighbors) {
+                        if (!visited[neighbor]) {
+                            let newDist = distances[node] + neighbors[neighbor];
+                            if (newDist < (distances[neighbor] || Infinity)) {
+                                distances[neighbor] = newDist;
+                                pq.enqueue(neighbor, newDist);
+                            }
+                        }
+                    }
+                }
+                return distances;
+            }
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Business Case 2: Intelligent Urban Transport System</h2>
+        <p><strong>SDG 11 Alignment</strong></p>
+        <p><strong>Target 11.2:</strong> Provide access to safe, affordable, and sustainable transport systems.</p>
+        <p><strong>Indicator 11.2.1:</strong> Proportion of population with convenient access to public transport.</p>
+        <h3>Proposed Algorithms</h3>
+        <ul>
+            <li><strong>Breadth-First Search (BFS) for Public Transport Connectivity Analysis:</strong> Identify least-cost paths and connectivity across urban transport networks.</li>
+            <li><strong>AVL Trees for Traffic Flow Management:</strong> Store and retrieve real-time traffic data efficiently.</li>
+            <li><strong>Pruning for Congestion Detection:</strong> Remove less critical routes from evaluation to focus on high-impact traffic zones.</li>
+        </ul>
+        <h3>Business Case 2 Code</h3>
+        <pre>
+            // BFS for Public Transport Connectivity Analysis
+            function bfs(graph, start) {
+                let visited = new Set();
+                let queue = [start];
+                visited.add(start);
+                while (queue.length > 0) {
+                    let node = queue.shift();
+                    let neighbors = graph[node];
+                    for (let neighbor of neighbors) {
+                        if (!visited.has(neighbor)) {
+                            visited.add(neighbor);
+                            queue.push(neighbor);
+                        }
+                    }
+                }
+                return visited;
+            }
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Business Case 3: Urban Green Space Planning</h2>
+        <p><strong>SDG 11 Alignment</strong></p>
+        <p><strong>Target 11.7:</strong> Provide universal access to safe, inclusive, and accessible green spaces.</p>
+        <p><strong>Indicator 11.7.1:</strong> Average share of the built-up area that is open space for public use.</p>
+        <h3>Proposed Algorithms</h3>
+        <ul>
+            <li><strong>Backtracking for Optimal Park Placement:</strong> Explore multiple layouts to maximize green space while minimizing land use.</li>
+            <li><strong>Segment Trees for Land Use Analysis:</strong> Track and query changes in land use over time efficiently.</li>
+            <li><strong>Fenwick Trees for Green Space Accessibility Measurement:</strong> Measure accessibility by calculating distances between green spaces and residential areas.</li>
+        </ul>
+        <h3>Business Case 3 Code</h3>
+        <pre>
+            // Backtracking for Optimal Park Placement
+            function backtrack(grid, landAvailable) {
+                if (landAvailable <= 0) return true;
+                for (let i = 0; i < grid.length; i++) {
+                    for (let j = 0; j < grid[i].length; j++) {
+                        if (grid[i][j] === 0) {
+                            grid[i][j] = 1;
+                            if (backtrack(grid, landAvailable - 1)) return true;
+                            grid[i][j] = 0;
+                        }
+                    }
+                }
+                return false;
+            }
+        </pre>
+    </div>
+
+    <div class="table-container">
+        <h2>Concepts and Design Techniques</h2>
+        <h3>Concepts</h3>
+        <table>
+            <tr>
+                <th>SI. No.</th>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Can you use this in your project?</th>
+                <th>How and Where?</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Decomposition</td>
+                <td>Divide the problem into smaller manageable parts</td>
+                <td>Yes</td>
+                <td>Applied in waste collection route optimization by breaking down bin locations.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pattern Recognition</td>
+                <td>Identifying common recurring patterns</td>
+                <td>Yes</td>
+                <td>Used in clustering waste bins and analyzing traffic flow patterns.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Abstraction</td>
+                <td>Keep only the required data for the task.</td>
+                <td>Yes</td>
+                <td>Used for green space planning to focus on essential land-use metrics.</td>
+            </tr>
+        </table>
+
+        <h3>Design Techniques</h3>
+        <table>
+            <tr>
+                <th>SI. No.</th>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Can you use this in your project?</th>
+                <th>How and Where?</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Brute Force</td>
+                <td>The definitional way of solving the problem</td>
+                <td>No</td>
+                <td>Not suitable for scalable urban problems due to inefficiency.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Divide and Conquer</td>
+                <td>Divide the problem into smaller parts (preferably half) and then solve.</td>
+                <td>Yes</td>
+                <td>Used in green space planning by dividing the map into smaller grids for analysis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Decrease and Conquer</td>
+                <td>Decrease the input size by 1 or some constant k in each solution phase.</td>
+                <td>Yes</td>
+                <td>Applied in waste bin clustering by incrementally grouping bins.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Implementation Analysis</h2>
+        <table>
+            <tr>
+                <th>Algorithm/Data Structure</th>
+                <th>Used (Yes/No)</th>
+                <th>How and Where?</th>
+                <th>Space Efficiency</th>
+                <th>Time Efficiency</th>
+            </tr>
+            <tr>
+                <td>Arrays</td>
+                <td>Yes</td>
+                <td>Waste categorization and traffic density storage</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Structures</td>
+                <td>Yes</td>
+                <td>For managing bin locations and land use records</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>List</td>
+                <td>Yes</td>
+                <td>Storing routes and clusters</td>
+                <td>Medium</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Stack</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Queue</td>
+                <td>Yes</td>
+                <td>Used in BFS for public transport analysis</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Binary Tree</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Binary Search Tree</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AVL Tree</td>
+                <td>Yes</td>
+                <td>Managing real-time traffic data</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>2-3 Tree</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Red-Black Tree</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Trie</td>
+                <td>Yes</td>
+                <td>Waste type categorization based on sensor tags</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Heap</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Lookup Table</td>
+                <td>Yes</td>
+                <td>Hashing for efficient waste segregation</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Sparse Table</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fenwick Tree</td>
+                <td>Yes</td>
+                <td>Measuring green space accessibility</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Segment Tree</td>
+                <td>Yes</td>
+                <td>Land use optimization and queries</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Skip List</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Union-Find</td>
+                <td>Yes</td>
+                <td>Bin management and locality-based clustering</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Hashing</td>
+                <td>Yes</td>
+                <td>Waste type categorization</td>
+                <td>High</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>DFS</td>
+                <td>Yes</td>
+                <td>Analyzing connectivity in urban transport network</td>
+                <td>Medium</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>BFS</td>
+                <td>Yes</td>
+                <td>Shortest paths for public transport optimization</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Bubble Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Selection Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Insertion Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Quick Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Merge Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Brute Force String Search</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Rabin Karp</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Boyer-Moore</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Knuth-Morris-Pratt</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Heap Sort</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Kruskal</td>
+                <td>Yes</td>
+                <td>Spanning tree for waste truck route optimization</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Prim</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Dijkstra</td>
+                <td>Yes</td>
+                <td>Shortest path for waste collection optimization</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td>Floyd</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Warshall</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bellman-Ford</td>
+                <td>No</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Learning Reflections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #00509e;
+            margin-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #d6336c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Learning Reflections</h1>
+
+    <div class="section">
+        <h2>1. Problems in Nature and Computational Approaches</h2>
+        <p><strong>Kinds of Problems:</strong></p>
+        <ul>
+            <li><strong>Iteration:</strong> Problems requiring repetitive actions, like summing a list or finding a specific element.</li>
+            <li><strong>Recursion:</strong> Problems with a self-referential nature, like factorial computation or solving the Tower of Hanoi.</li>
+            <li><strong>Backtracking:</strong> Problems requiring exploration of multiple possibilities, such as Sudoku solving or n-Queens.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Space and Time Efficiency</h2>
+        <p><strong>Importance:</strong></p>
+        <ul>
+            <li>Space efficiency ensures minimal memory usage, critical for systems with limited resources.</li>
+            <li>Time efficiency minimizes computation time, essential for real-time and large-scale applications.</li>
+        </ul>
+        <p><strong>Orders of Growth:</strong></p>
+        <ul>
+            <li><strong>Constant (O(1):</strong> Fixed time, irrespective of input size.</li>
+            <li><strong>Logarithmic (O(log n)):</strong> Reduces problem size exponentially with each step, as seen in binary search.</li>
+            <li><strong>Linear (O(n)):</strong> Processing every input, like summing elements of an array.</li>
+            <li><strong>Quadratic (O(n²)):</strong> Nested loops, such as in bubble sort.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Design Principles </h2>
+        <p><strong>Key Takeaways:</strong></p>
+        <ul>
+            <li><strong>Divide and Conquer:</strong> Breaking problems into sub-problems (e.g., merge sort).</li>
+            <li><strong>Greedy Algorithms:</strong> Making locally optimal choices (e.g., Kruskal’s MST).</li>
+            <li><strong>Dynamic Programming:</strong> Solving overlapping subproblems (e.g., Fibonacci sequence).</li>
+            <li><strong>Pruning:</strong> Reducing search space to improve efficiency.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Hierarchical Data and Tree Structures</h2>
+        <p><strong>Tree Data Structures:</strong></p>
+        <ul>
+            <li><strong>Binary Search Tree (BST):</strong> Efficient searches and insertions.</li>
+            <li><strong>AVL Trees:</strong> Balanced BSTs ensuring O(log n) operations.</li>
+            <li><strong>2-3 Trees:</strong> Multi-way balanced trees for databases.</li>
+            <li><strong>Red-Black Trees:</strong> Balancing in dynamic sets.</li>
+            <li><strong>Heap:</strong> Priority queue operations like Dijkstra’s shortest path.</li>
+            <li><strong>Trie:</strong> Prefix-based search for dictionaries.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. Array Query Algorithms</h2>
+        <p><strong>Need and Applications:</strong></p>
+        <ul>
+            <li>Efficient querying of large datasets (e.g., prefix sums, segment trees).</li>
+            <li>Applications in database systems, competitive programming.</li>
+        </ul>
+        <p><strong>Principles:</strong></p>
+        <ul>
+            <li>Divide-and-conquer structures (e.g., segment trees).</li>
+            <li>Fenwick Trees for cumulative sums and range queries.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. Trees vs. Graphs</h2>
+        <p><strong>Differences:</strong></p>
+        <ul>
+            <li><strong>Trees:</strong> Hierarchical, acyclic structures with a single root.</li>
+            <li><strong>Graphs:</strong> Generalized data structures with cycles and multiple paths.</li>
+        </ul>
+        <p><strong>Traversals:</strong></p>
+        <ul>
+            <li><strong>Tree Traversals:</strong> Pre-order, in-order, post-order.</li>
+            <li><strong>Graph Traversals:</strong> BFS for shortest paths, DFS for connectivity.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. Sorting and Searching Algorithms</h2>
+        <p><strong>Techniques:</strong></p>
+        <ul>
+            <li><strong>Sorting:</strong> Divide-and-conquer (merge sort), comparison-based (quick sort).</li>
+            <li><strong>Searching:</strong> Binary search for sorted arrays, hash-based search for unsorted data.</li>
+        </ul>
+        <p><strong>Real-World Connection:</strong> Sorting for database management and searching for efficient information retrieval.</p>
+    </div>
+
+    <div class="section">
+        <h2>8. Graph Algorithms</h2>
+        <p><strong>Spanning Trees:</strong> MSTs (Kruskal’s, Prim’s) for cost minimization in networks.</p>
+        <p><strong>Shortest Path:</strong> Dijkstra’s for weighted graphs, Floyd-Warshall for dense graphs.</p>
+    </div>
+
+    <div class="section">
+        <h2>9. Algorithm Design Techniques</h2>
+        <p><strong>Key Reflections:</strong></p>
+        <ul>
+            <li>Choose efficiency by analyzing complexity and scalability.</li>
+            <li>Balance constraints using dynamic programming or multi-objective optimization.</li>
+            <li>Evaluate solutions by correctness, efficiency, and simplicity.</li>
+        </ul>
+    </div>
+</body>
+</html>
